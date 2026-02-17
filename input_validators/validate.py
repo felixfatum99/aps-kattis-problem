@@ -28,5 +28,8 @@ if len(nums) != x:
 if len(set(nums)) != len(nums):
      print("here 3")
      sys.exit(43)
+    
+if sys.stdin.read().strip() != "":
+    sys.exit(43)
 
 sys.exit(42)
