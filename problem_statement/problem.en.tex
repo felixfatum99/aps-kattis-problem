@@ -1,0 +1,16 @@
+\problemname{Wine}
+You are hosting a sophisticated wine tasting for your $n-1$ friends. You and each of your friends brought exactly one wine to the tasting. Being an organized and responsible adult, you assign each wine a unique identifier between 
+$1$ and $n$. After tasting each wine, you write down its identifier and your rating on separate pages in your notebook so that you can determine which friend brought the best wine.
+Unfortunately, as the night progresses and the number of empty wine bottles steadily increases, your organizational skills begin to deteriorate. At some point, you forget to rate exactly one wine.
+The next morning, during the worst hangover of your life, you discover that your notebook pages are scattered across the floor. After gathering them, you realize that you are missing exactly one page.
+In order to fairly determine who brought the best wine, you must figure out which wine never received its rating - hoping there is still some left in the bottle so you can have it for breakfast and finally record its score.Given the list of all wines and their unique identifiers, and the list of identifiers for which ratings were successfully recorded, determine which wine still needs to be rated.
+
+\section*{Input}
+The first line contains a single integer $n$ ($1 \le n \le 200000$), the number of wines tasted.
+The next $n$ lines each contain a distinct wine name $w$ consisting of $l$ lower case english letters and spaces ($1 \le l \le 20$) and a distinct integer $i$ ($1 \le i \le n$), the unique identifier of that wine. It is guaranteed that no wine has the same name.
+The final line contains $n-1$ distinct integers between $1$ and $n$, representing the identifiers of the wines that were successfully rated.
+It is guaranteed that exactly one identifier between $1$ and $n$ is missing from the final line.
+
+\section*{Output}
+
+Output the name of the wine that still needs to be rated.
