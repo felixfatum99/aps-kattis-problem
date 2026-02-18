@@ -3,8 +3,8 @@ n = int(input())
 d = {}
 
 for _ in range(n):
-    line = input().split()
-    d[int(line[-1])] = line[0]
+    wine, id = input().rsplit(" ", 1)
+    d[int(id)] = wine
 
 total = sum([int(x) for x in input().split()])
 total_no_missing_number = n * (n + 1) // 2

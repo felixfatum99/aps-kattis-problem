@@ -1,34 +1,65 @@
 import sys 
 import re
 
-n = sys.stdin.readline()
-if not re.match(r"(0|([1-9][0-9]*))\n", n):
+# N -> Amount of wines
+n = sys.stdin.readline().strip()
+if not re.fullmatch(r"[1-9]\d*", n):
         sys.exit(43)
-try:
-    x = int(n)-1
 
-    #Replace with actual values
-    if not 0 <= x <= 1000000:
-        sys.exit(43)
-except ValueError:
+x = int(n)
+
+if not 1 <= x <= 200000:
     sys.exit(43)
 
-line = sys.stdin.readline()
+wines = []
+ids = []
 
-if not re.match(r"^(0|[1-9][0-9]*)( (0|[1-9][0-9]*))*$", line):
-    print("here 1")
-    sys.exit(43)
+# N lines of distinct wines and their distinct ids
+for _ in range(x):
+    line = sys.stdin.readline()
+    line = line.rstrip("\r\n")
 
-nums = line.split()
+    if not re.match(r"^[a-z]+(?: [a-z]+)* [1-9]\d*$", line):
+         sys.exit(43)
 
-if len(nums) != x:
-     print("here 2")
-     sys.exit(43)
+    wine, id = line.rsplit(" ", 1)
 
-if len(set(nums)) != len(nums):
-     print("here 3")
-     sys.exit(43)
+    if len(wine) > 20:
+         sys.exit(43)
     
+    wines.append(wine)
+
+    y = int(id)
+    if not 1 <= y <= x:
+        sys.exit(43)
+
+    ids.append(y)
+
+idset = set(ids)
+if len(idset) != x:
+     sys.exit(43)
+
+if len(set(wines)) != x:
+     sys.exit(43)
+
+if x > 1:
+    # N-1 id's
+    line = sys.stdin.readline().strip()
+
+    if not re.match(r"^[1-9][0-9]*( [1-9][0-9]*)*$", line):
+        sys.exit(43)
+
+    nums = [int(t) for t in line.split()]
+
+    if len(nums) != x-1:
+        sys.exit(43)
+    if len(set(nums)) != len(nums):
+        sys.exit(43)
+    if any(not (1 <= v <= x) for v in nums):
+        sys.exit(43)
+    if any(v not in idset for v in nums):
+        sys.exit(43)
+        
 if sys.stdin.read().strip() != "":
     sys.exit(43)
 
