@@ -16,17 +16,17 @@ except ValueError:
 line = sys.stdin.readline()
 
 if not re.match(r"^(0|[1-9][0-9]*)( (0|[1-9][0-9]*))*$", line):
-    print("here 1")
+    print("Syntax error")
     sys.exit(43)
 
 nums = line.split()
 
 if len(nums) != x:
-     print("here 2")
+     print("Number of elements does not match n-1")
      sys.exit(43)
 
 if len(set(nums)) != len(nums):
-     print("here 3")
+     print("Duplicate elements found")
      sys.exit(43)
     
 if sys.stdin.read().strip() != "":
