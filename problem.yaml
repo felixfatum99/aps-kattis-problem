@@ -1,4 +1,6 @@
+problem_format_version: legacy
+type: "pass-fail"
 name: Find the Missing Number
 license: public domain
-type: pass-fail
-uuid: 53adc5ad-5bbc-4099-a67e-1f7a3cbf5469
+uuid: "53adc5ad-5bbc-4099-a67e-1f7a3cbf5469"
+author: Group "fun name"

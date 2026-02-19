@@ -8,7 +8,7 @@ def generate(n, picked):
 
     return nums
 
-for i in range(1, 6):
+for i in range(1, 7):
     file = str(i)
     n = pow(10, i)
     picked = random.randint(2, n-1)

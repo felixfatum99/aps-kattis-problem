@@ -3,6 +3,7 @@ import re
 
 n = sys.stdin.readline()
 if not re.match(r"(0|([1-9][0-9]*))\n", n):
+        print("Expected integer", file=sys.stderr)
         sys.exit(43)
 try:
     x = int(n)-1
