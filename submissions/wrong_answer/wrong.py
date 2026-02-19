@@ -1,5 +1,7 @@
 n = int(input())
 nums = list(map(int, input().split()))
 
-expected = n * (n + 1) / 2  
-print(int(expected - sum(nums)))
+for i in range(1, n):
+    if nums[i-1] != i:
+        print(i)
+        break
